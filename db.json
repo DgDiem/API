@@ -1,0 +1,41 @@
+[{
+    "_id": {
+      "$oid": "6619ef05fc13ae7345ab89f5"
+    },
+    "name": "Nguyễn Thị Ánh Viên",
+    "yearofbirth": "12/26/1982",
+    "email": "sfavey0@cloudflare.com",
+    "competition": "Bơi Lội"
+  }, {
+    "_id": {
+      "$oid": "6619ef05fc13ae7345ab89f6"
+    },
+    "name": "Hoàng Xuân Vinh",
+    "yearofbirth": "8/13/2023",
+    "email": "ifrowd1@rediff.com",
+    "competition": "Bắn Súng"
+  }, {
+    "_id": {
+      "$oid": "6619ef05fc13ae7345ab89f7"
+    },
+    "name": "Nguyễn Tiến Minh",
+    "yearofbirth": "12/17/1979",
+    "email": "barckoll2@mac.com",
+    "competition": "Cầu Lông"
+  }, {
+    "_id": {
+      "$oid": "6619ef05fc13ae7345ab89f8"
+    },
+    "name": "Ngô Văn Kiều",
+    "yearofbirth": "11/3/2023",
+    "email": "vtennet3@berkeley.edu",
+    "competition": "Bóng Chuyền"
+  }, {
+    "_id": {
+      "$oid": "6619ef05fc13ae7345ab89f9"
+    },
+    "name": "Lê Thị Lựu",
+    "yearofbirth": "5/2/1993",
+    "email": "dead4@cam.ac.uk",
+    "competition": "Cử Tạ"
+  }]

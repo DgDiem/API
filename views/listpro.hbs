@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Thêm sản phẩm | Quản trị Admin</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS-->
+  {{!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> --}}
+<link rel='stylesheet' href='/stylesheets/main2.css' />
+
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!-- Font-icon css-->
+  <link rel="stylesheet" type="./text/css"
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+</head>
+
+<!-- <body class="app sidebar-mini rtl"> -->
+  <!-- Navbar-->
+  <header class="app-header">
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+      aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+      <!-- User Menu-->
+      <li><a class="app-nav__item" href="/index.html"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+      </li>
+    </ul>
+  </header>
+  <!-- Sidebar menu-->
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../assets/img/logo5.png" width="300px"
+        alt="User Image">
+      <div>
+        <p class="app-sidebar__user-name"><b>Toto</b></p>
+        <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
+      </div>
+    </div>
+    <hr>
+    <ul class="app-menu">
+        <li><a class="app-menu__item active" href="index.html"><i class='app-menu__icon bx bx-tachometer'></i><span
+              class="app-menu__label">Bảng điều khiển</span></a></li>
+  
+        <li>
+          <a class="app-menu__item" href="catalog.html">
+            <i class='app-menu__icon bx bx-purchase-tag-alt'></i>
+            <span class="app-menu__label">Quản lý danh mục</span>
+          </a>
+        </li>
+        <li>
+          <a class="app-menu__item" href="product.html">
+            <i class='app-menu__icon bx bx-purchase-tag-alt'></i>
+            <span class="app-menu__label">Quản lý sản phẩm</span>
+          </a>
+        </li>
+      </ul>
+  </aside>
+  <main class="app-content">
+    <div class="app-title">
+        <ul class="app-breadcrumb breadcrumb side">
+            <li class="breadcrumb-item active"><a href="#"><b>Danh sách sản phẩm</b></a></li>
+        </ul>
+        <div id="clock"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="tile-body">
+                    <div class="row element-button">
+                        <div class="col-sm-2">
+          
+                          <a class="btn btn-add btn-sm" href="/addpro" title="Thêm"><i class="fas fa-plus"></i>
+                            Tạo mới sản phẩm</a>
+                        </div>
+                      </div>
+                    <table class="table table-hover table-bordered" id="sampleTable">
+                        <thead>
+                            <tr>
+                                {{!-- <th width="10"><input type="checkbox" id="all"></th> --}}
+                                <th>STT</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Ảnh</th>
+                                 <th>Số lượng</th> 
+                                <th>Mô tả</th>
+                                <th>Giá tiền</th>
+                                 <th>Danh mục</th> 
+                                <th>Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody id="showSanpham">
+                          {{#each product}}
+                             <tr>
+                                {{!-- <td width="10"><input type="checkbox" name="check1" value="1"></td> --}}
+                                <td>{{this._id}}</td>
+                                <td>{{this.name}}</td>
+                                <td><img src="/images/{{this.img}}" alt="" width="100px;"></td>
+                                
+                                <td>{{this.quantity}}</td>
+                                <td><span >{{this.description}}</span></td>
+                                <td>{{this.price}} VNĐ</td>
+                                <td></td>
+                                <td>
+
+                                        <a href="listpro/delete/{{this._id}}">
+                                            <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                            onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
+                                            </button>
+                                        </a>
+                                        <a href="listpro/edit/{{this._id}}">
+                                        <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
+                                        data-target="#ModalUP"><i class="fas fa-edit"></i>
+                                        </button>
+                                        </a>
+                                </td> 
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="./js/product.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thêm sản phẩm</title>
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 50px;
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-container">
+                <h2>Thêm sản phẩm mới</h2>
+                <form id="addProductForm">
+                    <div class="form-group">
+                        <label for="name">Tên sản phẩm:</label>
+                        <input type="text" class="form-control" id="name"
+                            name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Giá:</label>
+                        <input type="number" class="form-control" id="price"
+                            name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Số lượng:</label>
+                        <input type="number" class="form-control" id="quantity"
+                            name="quantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Danh mục:</label>
+                        <input type="text" class="form-control" id="category"
+                            name="category" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="img1">Ảnh 1:</label>
+                        <input type="file" class="form-control-file" id="img1"
+                            name="img1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="img2">Ảnh 2:</label>
+                        <input type="file" class="form-control-file" id="img2"
+                            name="img2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="img3">Ảnh 3:</label>
+                        <input type="file" class="form-control-file" id="img3"
+                            name="img3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Mô tả:</label>
+                        <textarea class="form-control" id="description"
+                            name="description" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Thêm sản
+                        phẩm</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
