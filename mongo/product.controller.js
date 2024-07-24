@@ -18,6 +18,7 @@ module.exports = {
   getByCategory,
   getByPublish,
   getByAuthor,
+  getProView,
 };
 
 // Thêm sản phẩm
@@ -327,6 +328,20 @@ async function getByAuthor(author) {
     return productsAuthor;
   } catch (error) {
     console.log("Lỗi lấy sản phẩm  theo author", error);
+    throw error;
+  }
+}
+
+//Sản phẩm nhiều lượt xem
+async function getProView() {
+  try {
+    const result = await productModel
+      .find({ view: { $gte: 50 } })
+      .sort({ view: -1 })
+      .limit(4);
+    return result;
+  } catch (error) {
+    console.log("Lỗi lấy sp", error);
     throw error;
   }
 }
