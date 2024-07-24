@@ -15,6 +15,9 @@ module.exports = {
   getDecrease,
   getAscending,
   getSale,
+  getByCategory,
+  getByPublish,
+  getByAuthor,
 };
 
 // Thêm sản phẩm
@@ -285,6 +288,45 @@ async function getAscending() {
     return result;
   } catch (error) {
     console.log("Lỗi lấy sp theo key", error);
+    throw error;
+  }
+}
+
+//Lọc sản phẩm theo danh mục
+async function getByCategory(category) {
+  try {
+    const productsCategory = await productModel.find({
+      "category.categoryId": category,
+    });
+    return productsCategory;
+  } catch (error) {
+    console.log("Lỗi lấy sản phẩm  theo ID danh mục", error);
+    throw error;
+  }
+}
+
+//Lọc sản phẩm theo publish
+async function getByPublish(publish) {
+  try {
+    const productsPublish = await productModel.find({
+      "publish.publishId": publish,
+    });
+    return productsPublish;
+  } catch (error) {
+    console.log("Lỗi lấy sản phẩm  theo publish", error);
+    throw error;
+  }
+}
+
+//Lọc sản phẩm theo author
+async function getByAuthor(author) {
+  try {
+    const productsAuthor = await productModel.find({
+      "author.authorId": author,
+    });
+    return productsAuthor;
+  } catch (error) {
+    console.log("Lỗi lấy sản phẩm  theo author", error);
     throw error;
   }
 }

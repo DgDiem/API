@@ -217,4 +217,42 @@ router.get("/sort/sale", async (req, res) => {
   }
 });
 
+//Show sản phẩm theo categoryID
+router.get("/categoryId/:category", async (req, res, next) => {
+  try {
+    const category = req.params.category;
+    const products = await productController.getByCategory(category);
+
+    return res.status(200).json(products);
+  } catch (error) {
+    console.log("Load sản phẩm không thành công", error);
+    res.status(500).json({ mess: error });
+  }
+});
+
+//Show sản phẩm theo publishId
+router.get("/publishId/:publish", async (req, res, next) => {
+  try {
+    const publish = req.params.publish;
+    const products = await productController.getByPublish(publish);
+
+    return res.status(200).json(products);
+  } catch (error) {
+    console.log("Load sản phẩm không thành công", error);
+    res.status(500).json({ mess: error });
+  }
+});
+
+//Show sản phẩm theo authorId
+router.get("/authorId/:author", async (req, res, next) => {
+  try {
+    const author = req.params.author;
+    const products = await productController.getByAuthor(author);
+
+    return res.status(200).json(products);
+  } catch (error) {
+    console.log("Load sản phẩm không thành công", error);
+    res.status(500).json({ mess: error });
+  }
+});
 module.exports = router;
