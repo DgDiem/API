@@ -6,7 +6,7 @@ const ObjectId = Schema.ObjectId; // khóa chính id
 
 const authorSchema = new Schema({
   name: { type: String, require: true }, // require true là bắt buộc ---- fasle là ko bắt buộc
-  description: { type: String, require: true },
+  description: { type: String, require: false },
 });
 
 module.exports =
