@@ -4,6 +4,7 @@ const categoryController = require("../mongo/categories.controller");
 const productController = require("../mongo/product.controller");
 const checktoken = require("../helper/checktoken");
 
+//Show danh mục
 router.get("/", checktoken, async (req, res) => {
   try {
     const category = await categoryController.gettAll();
@@ -15,6 +16,7 @@ router.get("/", checktoken, async (req, res) => {
   }
 });
 
+//Show danh mục theo ID
 router.get("/categoryId/:category", async (req, res, next) => {
   try {
     const category = req.params.category;
@@ -27,8 +29,7 @@ router.get("/categoryId/:category", async (req, res, next) => {
   }
 });
 
-// them danh mục mơi
-
+// Thêm danh mục mơi
 router.post("/", async (req, res) => {
   try {
     const body = req.body;
@@ -40,19 +41,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
-  try {
-    const { id } = req.params; // lấy đượccái id mà người dùng gửi lên
-    const pro = await categoryController.getById(id);
-    // return pro
-    return res.status(200).json(pro);
-  } catch (error) {
-    console.log("lỗi lay chi tiet sp", error);
-    return res.status(500).json({ mess: error });
-  }
-});
-
-//routing cập nhật sản phẩm theo id
+//Sửa danh mục theo id
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -65,8 +54,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-//routing xóa danh mục theo id
-
+//Xóa danh mục theo id
 router.delete("/delete/:id", async (req, res) => {
   try {
     const { id } = req.params; // lấy đượccái id mà người dùng gửi lên
